@@ -33,9 +33,9 @@ function HomeScreen({ navigation }) {
     socket.current.emit("message", messageToSend);
     setMessageToSend("");
   };
-  const [btn1, setBtn1] = useState(false);
-  const [btn2, setBtn2] = useState(false);
-  const [btn3, setBtn3] = useState(false);
+  const [btn1, setBtn1] = useState(0);
+  const [btn2, setBtn2] = useState(0);
+  const [btn3, setBtn3] = useState(0);
   const [btn4, setBtn4] = useState(false);
   const [btn5, setBtn5] = useState(false);
   const [btn6, setBtn6] = useState(false);
@@ -44,10 +44,12 @@ function HomeScreen({ navigation }) {
   const [btn9, setBtn9] = useState(false);
   const [btn10, setBtn10] = useState(false);
 
-  function testlog() {
-    if (btn1 == true) {
-      array = [1, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-    }
+  function pressGuideStartBtn() {
+    // if (btn1 == true) {
+    //   array = [1, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+    // }
+
+    array = [btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn10];
     const sendMessage = () => {
       socket.current.emit("message", array);
       setMessageToSend("");
@@ -214,7 +216,7 @@ function HomeScreen({ navigation }) {
           style={styles.buttonB}
           onPress={() => {
             navigation.navigate("Details");
-            testlog();
+            pressGuideStartBtn();
           }}
         >
           <Text>안내 시작</Text>
