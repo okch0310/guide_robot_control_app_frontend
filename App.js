@@ -26,7 +26,7 @@ function HomeScreen({ navigation }) {
   const [messageToSend, setMessageToSend] = useState("");
   const socket = useRef(null);
   useEffect(() => {
-    socket.current = io("http://192.168.0.21:3001");
+    socket.current = io("http://192.168.35.189:3001");
   }, []);
 
   const sendMessage = () => {
@@ -36,20 +36,31 @@ function HomeScreen({ navigation }) {
   const [btn1, setBtn1] = useState(0);
   const [btn2, setBtn2] = useState(0);
   const [btn3, setBtn3] = useState(0);
-  const [btn4, setBtn4] = useState(false);
-  const [btn5, setBtn5] = useState(false);
-  const [btn6, setBtn6] = useState(false);
-  const [btn7, setBtn7] = useState(false);
-  const [btn8, setBtn8] = useState(false);
-  const [btn9, setBtn9] = useState(false);
-  const [btn10, setBtn10] = useState(false);
+  const [btn4, setBtn4] = useState(0);
+  const [btn5, setBtn5] = useState(0);
+  const [btn6, setBtn6] = useState(0);
+  const [btn7, setBtn7] = useState(0);
+  const [btn8, setBtn8] = useState(0);
+  const [btn9, setBtn9] = useState(0);
+  const [btn10, setBtn10] = useState(0);
 
   function pressGuideStartBtn() {
     // if (btn1 == true) {
     //   array = [1, 0, 0, 0, 0, 0, 0, 0, 0, 0];
     // }
 
-    array = [btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn10];
+    array = [
+      btn1 % 2,
+      btn2 % 2,
+      btn3 % 2,
+      btn4 % 2,
+      btn5 % 2,
+      btn6 % 2,
+      btn7 % 2,
+      btn8 % 2,
+      btn9 % 2,
+      btn10 % 2,
+    ];
     const sendMessage = () => {
       socket.current.emit("message", array);
       setMessageToSend("");
@@ -78,65 +89,65 @@ function HomeScreen({ navigation }) {
           <TouchableOpacity
             style={styles.button}
             onPress={() => {
-              setBtn1(!btn1);
+              setBtn1(btn1 + 1);
               //console.log(btn1);
             }}
           >
             <Image
               source={
-                btn1 ? require("./assets/1.png") : require("./assets/2.png")
+                btn1 % 2 ? require("./assets/1.png") : require("./assets/2.png")
               }
             />
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.button}
             onPress={() => {
-              setBtn2(!btn2);
+              setBtn2(btn2 + 1);
               //   console.log(btn2);
             }}
           >
             <Image
               source={
-                btn2 ? require("./assets/3.png") : require("./assets/4.png")
+                btn2 % 2 ? require("./assets/3.png") : require("./assets/4.png")
               }
             />
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.button}
             onPress={() => {
-              setBtn3(!btn3);
+              setBtn3(btn3 + 1);
               //  console.log(btn3);
             }}
           >
             <Image
               source={
-                btn3 ? require("./assets/5.png") : require("./assets/6.png")
+                btn3 % 2 ? require("./assets/5.png") : require("./assets/6.png")
               }
             />
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.button}
             onPress={() => {
-              setBtn4(!btn4);
+              setBtn4(btn4 + 1);
               // console.log(btn4);
             }}
           >
             <Image
               source={
-                btn4 ? require("./assets/1.png") : require("./assets/2.png")
+                btn4 % 2 ? require("./assets/1.png") : require("./assets/2.png")
               }
             />
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.button}
             onPress={() => {
-              setBtn5(!btn5);
+              setBtn5(btn5 + 1);
               //console.log(btn1);
             }}
           >
             <Image
               source={
-                btn5 ? require("./assets/1.png") : require("./assets/2.png")
+                btn5 % 2 ? require("./assets/1.png") : require("./assets/2.png")
               }
             />
           </TouchableOpacity>
@@ -146,65 +157,67 @@ function HomeScreen({ navigation }) {
           <TouchableOpacity
             style={styles.button}
             onPress={() => {
-              setBtn6(!btn6);
+              setBtn6(btn6 + 1);
               //console.log(btn1);
             }}
           >
             <Image
               source={
-                btn6 ? require("./assets/1.png") : require("./assets/2.png")
+                btn6 % 2 ? require("./assets/1.png") : require("./assets/2.png")
               }
             />
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.button}
             onPress={() => {
-              setBtn7(!btn7);
+              setBtn7(btn7 + 1);
               //console.log(btn1);
             }}
           >
             <Image
               source={
-                btn7 ? require("./assets/1.png") : require("./assets/2.png")
+                btn7 % 2 ? require("./assets/1.png") : require("./assets/2.png")
               }
             />
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.button}
             onPress={() => {
-              setBtn8(!btn8);
+              setBtn8(btn8 + 1);
               //console.log(btn1);
             }}
           >
             <Image
               source={
-                btn8 ? require("./assets/1.png") : require("./assets/2.png")
+                btn8 % 2 ? require("./assets/1.png") : require("./assets/2.png")
               }
             />
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.button}
             onPress={() => {
-              setBtn9(!btn9);
+              setBtn9(btn9 + 1);
               //console.log(btn1);
             }}
           >
             <Image
               source={
-                btn9 ? require("./assets/1.png") : require("./assets/2.png")
+                btn9 % 2 ? require("./assets/1.png") : require("./assets/2.png")
               }
             />
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.button}
             onPress={() => {
-              setBtn10(!btn10);
+              setBtn10(btn10 + 1);
               //console.log(btn1);
             }}
           >
             <Image
               source={
-                btn10 ? require("./assets/1.png") : require("./assets/2.png")
+                btn10 % 2
+                  ? require("./assets/1.png")
+                  : require("./assets/2.png")
               }
             />
           </TouchableOpacity>
