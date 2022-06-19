@@ -14,7 +14,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Video, AVPlaybackStatus } from "expo-av";
 import io from "socket.io-client";
-
+import v1 from "./assets/v1.mp4";
 const { width: SCREEN_WIDTH } = Dimensions.get("window");
 var array = [0];
 
@@ -26,7 +26,7 @@ function HomeScreen({ navigation }) {
   const [messageToSend, setMessageToSend] = useState("");
   const socket = useRef(null);
   useEffect(() => {
-    socket.current = io("http://192.168.35.189:3001");
+    socket.current = io("http://192.168.35.84:3001");
   }, []);
 
   const sendMessage = () => {
@@ -65,6 +65,7 @@ function HomeScreen({ navigation }) {
       socket.current.emit("message", array);
       setMessageToSend("");
     };
+
     console.log(array);
     sendMessage();
 
@@ -256,9 +257,8 @@ function DetailsScreen() {
       <Video
         ref={video}
         style={styles.video}
-        source={{
-          uri: "https://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4",
-        }}
+        source={v1}
+        //uri:"https://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4",
         useNativeControls
         resizeMode="contain"
         isLooping
