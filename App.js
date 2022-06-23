@@ -17,7 +17,7 @@ import io from "socket.io-client";
 import v1 from "./assets/v1.mp4";
 const { width: SCREEN_WIDTH } = Dimensions.get("window");
 var array = [0];
-
+var ip = "hello";
 function navi() {
   console.log("nav");
   navigation.navigate("Details");
@@ -26,12 +26,17 @@ function HomeScreen({ navigation }) {
   const [messageToSend, setMessageToSend] = useState("");
   const socket = useRef(null);
   useEffect(() => {
-    socket.current = io("http://192.168.35.84:3001");
-  }, []);
-
+    socket.current = io(ip);
+  }, [ip]);
+  /////
+  /////
   const sendMessage = () => {
     socket.current.emit("message", messageToSend);
+    ip = messageToSend;
     setMessageToSend("");
+
+    console.log("ip:" + ip);
+    console.log("sendMessage 함수");
   };
   const [btn1, setBtn1] = useState(0);
   const [btn2, setBtn2] = useState(0);
@@ -61,6 +66,9 @@ function HomeScreen({ navigation }) {
       btn9 % 2,
       btn10 % 2,
     ];
+    /////
+    /////
+    //버튼 배열 정보
     const sendMessage = () => {
       socket.current.emit("message", array);
       setMessageToSend("");
@@ -79,7 +87,7 @@ function HomeScreen({ navigation }) {
         <TextInput
           value={messageToSend}
           onChangeText={(text) => setMessageToSend(text)}
-          placeholder="enter messasse"
+          placeholder="enter"
           onSubmitEditing={sendMessage}
         />
       </View>
@@ -270,13 +278,8 @@ function DetailsScreen() {
 }
 
 const Stack = createNativeStackNavigator();
-///////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////아이피 주소////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////
+
 function App() {
-  useEffect(function () {
-    io("http://192.168.0.21:3001");
-  }, []);
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
@@ -284,7 +287,7 @@ function App() {
           name="Home"
           component={HomeScreen}
           options={{
-            title: "대구 과학관",
+            title: "국립 대구 과학관",
             headerStyle: {
               backgroundColor: "#dce5d2",
             },
