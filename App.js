@@ -16,6 +16,7 @@ import { Video, AVPlaybackStatus } from "expo-av";
 //import io from "socket.io-client"; w
 import v1 from "./assets/v1.mp4";
 import HomeScreen from "./screens/HomeScreen";
+import DetailScreen from "./screens/DetailScreen";
 
 const { width: SCREEN_WIDTH } = Dimensions.get("window");
 var array = [0];
@@ -23,26 +24,6 @@ var ip = "hello";
 function navi() {
   console.log("nav");
   navigation.navigate("Details");
-}
-
-function DetailsScreen() {
-  const video = React.useRef(null);
-  const [status, setStatus] = React.useState({});
-  return (
-    <View style={styles.videoContainer}>
-      <Video
-        ref={video}
-        style={styles.video}
-        source={v1}
-        //uri:"https://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4",
-        useNativeControls
-        resizeMode="contain"
-        isLooping="true"
-        shouldPlay
-        onPlaybackStatusUpdate={(status) => setStatus(() => status)}
-      />
-    </View>
-  );
 }
 
 const Stack = createNativeStackNavigator();
@@ -68,7 +49,7 @@ function App() {
           }}
         />
 
-        <Stack.Screen name="Details" component={DetailsScreen} />
+        <Stack.Screen name="Details" component={DetailScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
