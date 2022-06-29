@@ -1,14 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { StatusBar } from "expo-status-bar";
-import {
-  StyleSheet,
-  Text,
-  View,
-  TouchableOpacity,
-  Image,
-  TextInput,
-} from "react-native";
-
+import { Text, View, TouchableOpacity, Image, TextInput } from "react-native";
 import io from "socket.io-client";
 import { gstyles } from "./gstyles";
 
