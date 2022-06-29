@@ -10,6 +10,7 @@ import {
 } from "react-native";
 
 import io from "socket.io-client";
+import { gstyles } from "./gstyles";
 
 var array = [0];
 var ip = "hello";
@@ -93,10 +94,10 @@ function HomeScreen({ navigation }) {
     array = [0];
   }
   return (
-    <View style={styles.container}>
+    <View style={gstyles.container}>
       <StatusBar style="black" />
 
-      <View style={styles.header}>
+      <View style={gstyles.header}>
         <TextInput
           value={messageToSend}
           onChangeText={(text) => setMessageToSend(text)}
@@ -105,10 +106,10 @@ function HomeScreen({ navigation }) {
         />
       </View>
 
-      <View style={styles.body}>
-        <View style={styles.btnContainer}>
+      <View style={gstyles.body}>
+        <View style={gstyles.btnContainer}>
           <TouchableOpacity
-            style={styles.button}
+            style={gstyles.button}
             onPress={() => {
               setBtn1(btn1 + 1);
             }}
@@ -122,7 +123,7 @@ function HomeScreen({ navigation }) {
             />
           </TouchableOpacity>
           <TouchableOpacity
-            style={styles.button}
+            style={gstyles.button}
             onPress={() => {
               setBtn2(btn2 + 1);
             }}
@@ -136,7 +137,7 @@ function HomeScreen({ navigation }) {
             />
           </TouchableOpacity>
           <TouchableOpacity
-            style={styles.button}
+            style={gstyles.button}
             onPress={() => {
               setBtn3(btn3 + 1);
             }}
@@ -150,7 +151,7 @@ function HomeScreen({ navigation }) {
             />
           </TouchableOpacity>
           <TouchableOpacity
-            style={styles.button}
+            style={gstyles.button}
             onPress={() => {
               setBtn4(btn4 + 1);
             }}
@@ -164,7 +165,7 @@ function HomeScreen({ navigation }) {
             />
           </TouchableOpacity>
           <TouchableOpacity
-            style={styles.button}
+            style={gstyles.button}
             onPress={() => {
               setBtn5(btn5 + 1);
             }}
@@ -178,9 +179,9 @@ function HomeScreen({ navigation }) {
             />
           </TouchableOpacity>
         </View>
-        <View style={styles.btnContainer}>
+        <View style={gstyles.btnContainer}>
           <TouchableOpacity
-            style={styles.button}
+            style={gstyles.button}
             onPress={() => {
               setBtn6(btn6 + 1);
             }}
@@ -194,7 +195,7 @@ function HomeScreen({ navigation }) {
             />
           </TouchableOpacity>
           <TouchableOpacity
-            style={styles.button}
+            style={gstyles.button}
             onPress={() => {
               setBtn7(btn7 + 1);
             }}
@@ -208,7 +209,7 @@ function HomeScreen({ navigation }) {
             />
           </TouchableOpacity>
           <TouchableOpacity
-            style={styles.button}
+            style={gstyles.button}
             onPress={() => {
               setBtn8(btn8 + 1);
             }}
@@ -222,7 +223,7 @@ function HomeScreen({ navigation }) {
             />
           </TouchableOpacity>
           <TouchableOpacity
-            style={styles.button}
+            style={gstyles.button}
             onPress={() => {
               setBtn9(btn9 + 1);
             }}
@@ -236,7 +237,7 @@ function HomeScreen({ navigation }) {
             />
           </TouchableOpacity>
           <TouchableOpacity
-            style={styles.button}
+            style={gstyles.button}
             onPress={() => {
               setBtn10(btn10 + 1);
             }}
@@ -252,9 +253,9 @@ function HomeScreen({ navigation }) {
         </View>
       </View>
 
-      <View style={styles.tail}>
+      <View style={gstyles.tail}>
         <TouchableOpacity
-          style={styles.buttonB}
+          style={gstyles.buttonB}
           onPress={() => {
             navigation.navigate("Details");
             pressGuideStartBtn();
@@ -264,7 +265,7 @@ function HomeScreen({ navigation }) {
         </TouchableOpacity>
 
         <TouchableOpacity
-          style={styles.buttonB}
+          style={gstyles.buttonB}
           onPress={() => {
             alert("you clicked me");
           }}
@@ -276,77 +277,4 @@ function HomeScreen({ navigation }) {
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    //backgroundColor: "#e0e8d77",
-  },
-  header: {
-    flex: 0.55,
-    //backgroundColor: "red",
-    backgroundColor: "#dce5d2",
-  },
-
-  body: {
-    flex: 3.5,
-    backgroundColor: "#bfd1ae",
-  },
-
-  tail: {
-    flex: 1,
-    backgroundColor: "#96b379",
-    justifyContent: "center",
-    alignItems: "center",
-    flexDirection: "row",
-    justifyContent: "space-evenly",
-
-    // width: 200,
-    // height: 50,
-    // borderRadius: 30,
-    // marginBottom: 15,
-  },
-
-  btnContainer: {
-    flex: 1,
-    //backgroundColor: "#fff",
-    backgroundColor: "#bfd1ae",
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
-    justifyContent: "space-evenly",
-  },
-
-  button: {
-    //backgroundColor: "#859a9b",
-    backgroundColor: "black",
-    borderRadius: 20,
-    padding: 10,
-    shadowColor: "#303838",
-    shadowOffset: { width: 0, height: 5 },
-    shadowRadius: 10,
-    shadowOpacity: 0.35,
-  },
-
-  buttonB: {
-    backgroundColor: "#fff",
-    borderRadius: 15,
-    padding: 20,
-    paddingLeft: 70,
-    paddingRight: 70,
-    shadowColor: "#303838",
-    shadowOffset: { width: 0, height: 5 },
-    shadowRadius: 10,
-    shadowOpacity: 0.35,
-  },
-  videoContainer: {
-    flex: 1,
-    justifyContent: "center",
-    backgroundColor: "#ecf0f1",
-  },
-  video: {
-    alignSelf: "center",
-    width: "100%",
-    height: "100%",
-  },
-});
 export default HomeScreen;
