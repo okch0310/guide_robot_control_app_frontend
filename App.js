@@ -127,7 +127,7 @@ function HomeScreen({ navigation }) {
           >
             <Image
               source={
-                btn2 % 2 ? require("./assets/1.png") : require("./assets/2.png")
+                btn1 % 2 ? require("./assets/1.png") : require("./assets/2.png")
               }
             />
           </TouchableOpacity>
