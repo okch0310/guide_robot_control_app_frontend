@@ -70,7 +70,30 @@ function HomeScreen({ navigation }) {
     /////
     //버튼 배열 정보
     const sendMessage = () => {
-      socket.current.emit("message", array);
+      //const btninfo = array;
+      socket.current.emit(
+        "message",
+
+        array[0] +
+          "," +
+          array[1] +
+          "," +
+          array[2] +
+          "," +
+          array[3] +
+          "," +
+          array[4] +
+          "," +
+          array[5] +
+          "," +
+          array[6] +
+          "," +
+          array[7] +
+          "," +
+          array[8] +
+          "," +
+          array[9]
+      );
       setMessageToSend("");
     };
 
@@ -87,7 +110,7 @@ function HomeScreen({ navigation }) {
         <TextInput
           value={messageToSend}
           onChangeText={(text) => setMessageToSend(text)}
-          placeholder="enter"
+          placeholder="ip 주소 입력"
           onSubmitEditing={sendMessage}
         />
       </View>
@@ -104,7 +127,7 @@ function HomeScreen({ navigation }) {
           >
             <Image
               source={
-                btn1 % 2 ? require("./assets/1.png") : require("./assets/2.png")
+                btn2 % 2 ? require("./assets/1.png") : require("./assets/2.png")
               }
             />
           </TouchableOpacity>
@@ -143,7 +166,7 @@ function HomeScreen({ navigation }) {
           >
             <Image
               source={
-                btn4 % 2 ? require("./assets/1.png") : require("./assets/2.png")
+                btn4 % 2 ? require("./assets/7.png") : require("./assets/8.png")
               }
             />
           </TouchableOpacity>
@@ -156,7 +179,9 @@ function HomeScreen({ navigation }) {
           >
             <Image
               source={
-                btn5 % 2 ? require("./assets/1.png") : require("./assets/2.png")
+                btn5 % 2
+                  ? require("./assets/9.png")
+                  : require("./assets/10.png")
               }
             />
           </TouchableOpacity>
@@ -172,7 +197,9 @@ function HomeScreen({ navigation }) {
           >
             <Image
               source={
-                btn6 % 2 ? require("./assets/1.png") : require("./assets/2.png")
+                btn6 % 2
+                  ? require("./assets/11.png")
+                  : require("./assets/12.png")
               }
             />
           </TouchableOpacity>
@@ -185,7 +212,9 @@ function HomeScreen({ navigation }) {
           >
             <Image
               source={
-                btn7 % 2 ? require("./assets/1.png") : require("./assets/2.png")
+                btn7 % 2
+                  ? require("./assets/13.png")
+                  : require("./assets/14.png")
               }
             />
           </TouchableOpacity>
@@ -198,7 +227,9 @@ function HomeScreen({ navigation }) {
           >
             <Image
               source={
-                btn8 % 2 ? require("./assets/1.png") : require("./assets/2.png")
+                btn8 % 2
+                  ? require("./assets/15.png")
+                  : require("./assets/16.png")
               }
             />
           </TouchableOpacity>
@@ -211,7 +242,9 @@ function HomeScreen({ navigation }) {
           >
             <Image
               source={
-                btn9 % 2 ? require("./assets/1.png") : require("./assets/2.png")
+                btn9 % 2
+                  ? require("./assets/17.png")
+                  : require("./assets/18.png")
               }
             />
           </TouchableOpacity>
@@ -225,8 +258,8 @@ function HomeScreen({ navigation }) {
             <Image
               source={
                 btn10 % 2
-                  ? require("./assets/1.png")
-                  : require("./assets/2.png")
+                  ? require("./assets/19.png")
+                  : require("./assets/20.png")
               }
             />
           </TouchableOpacity>
@@ -269,8 +302,8 @@ function DetailsScreen() {
         //uri:"https://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4",
         useNativeControls
         resizeMode="contain"
-        isLooping
-        shouldPlay="true"
+        isLooping="true"
+        shouldPlay
         onPlaybackStatusUpdate={(status) => setStatus(() => status)}
       />
     </View>
@@ -347,7 +380,7 @@ const styles = StyleSheet.create({
 
   button: {
     //backgroundColor: "#859a9b",
-    backgroundColor: "#fff",
+    backgroundColor: "black",
     borderRadius: 20,
     padding: 10,
     shadowColor: "#303838",
