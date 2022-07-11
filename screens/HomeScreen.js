@@ -75,7 +75,11 @@ function HomeScreen({ navigation }) {
           "," +
           array[8] +
           "," +
-          array[9]
+          array[9] +
+          "," +
+          4 +
+          "," +
+          1
       );
       setMessageToSend("");
     };
