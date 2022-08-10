@@ -1,8 +1,8 @@
 # guide_robot_control_app_frontend
 [국립 과학관 안내 로봇 제어 어플 frontend code]
-
+<br>
 주제<br>
--국립 과학관 안내 로봇 제어 어플<br><br>
+- 국립 과학관 안내 로봇 제어 어플<br><br>
 
 팀원<br>
 - 박제현, 오현언, 옥채현<br><br>
