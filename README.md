@@ -3,6 +3,4 @@
 
 실제 국립 과학관에서 사용될 안내 로봇을 제어하는 어플을 제작중입니다.. (2022.05 ~ ) (안내 로봇은 타과분들과 교수님 그리고 두 업체가 협력하여 제작하셨습니다.)
 
-front-end를 주로 맡았으나 back-end 분과 항상 함께 있을 수 없어 테스트를 위해 back-end socket.io를 이용한 웹소켓 통신 학습하여 front, back 모두 구현하였습니다.
-
 ![KakaoTalk_Photo_2022-08-11-01-51-06](https://user-images.githubusercontent.com/79138338/183969124-1f4814d7-5c3f-4141-b104-753fea3292ae.jpeg)
